@@ -1,0 +1,55 @@
+\documentclass{article}
+% \IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+
+\usepackage{indentfirst}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage[colorlinks,urlcolor=black, anchorcolor=black, citecolor=black, linkcolor=black]{hyperref}
+\usepackage{url}
+\usepackage[a4paper,left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+% \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+%     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+% \documentclass[15pt]{article}
+\begin{document}\large
+
+\title{ \textbf{Project Proposal (COMP-5900V 2021 Winter)}}
+\author{Ao Peng, 300145650}
+\date{}
+
+\maketitle
+\setlength{\baselineskip}{15pt}
+
+\section{Introduction} 
+The topic of this paper I chose is Image-to-Image Translation with Conditional Adversarial Networks\cite{isola2018imagetoimage}, which was released in CVPR 2019. This paper proposed a new GAN model named conditional GANs (cGANs) for a specific image processing area (image-to-image translation) as a common framework in replace of traditional methods \cite{efros2001image} \cite{fergus2006removing} \cite{eigen2015predicting}, etc. The results in this paper demonstrate that cGANs is a promising method for image-to-image translation tasks, especially for tasks involving highly structured graphical outputs.
+
+
+\section{Problem description}
+In fact, traditional methods for image translation tasks are actually based on the same setting: predict pixels from pixels. However, these methods are separate and special-purpose for each task. The coming of convolutional nerual networks (CNNs) plays a significant role in this direction while it will tend to produce blurry results because Euclidean distance is minimized by averaging all plausible outputs. Fortunately, the generative adversarial networks (GAN) \cite{goodfellow2014generative} will not tolerate this kind of blurry results as it mainly focus on classifying the image is real or fake which means that it can result in sharper and clear outputs.
+
+\setlength{\parskip}{0.5em}
+In this paper, the author is trying to develop a common approach for tackling all problem in this area. As GANs learn a generative model of data, cGANs learn a conditional generative model of data which strength the ability of addressing image-to-image translation tasks. In addition, a new term named PatchGAN in the paper palys a key role in this framework on improving the the performance.
+\section{Project scope and objectives}
+\begin{itemize}
+    \item Implementing cGANs
+    \item Training the model on Cityscapes Dataset \cite{Cordts2016Cityscapes} for semantic segmentation task and UT Zappos50K \cite{finegrained} \cite{semjitter} for edge to shoes task.
+    \item Evaluating the results of cGANs
+\end{itemize}
+
+
+
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{reference_comp5900.bib}
+
+
+\end{document}
